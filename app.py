@@ -25,6 +25,16 @@ pg = st.navigation(
             st.Page(page='dashboard.py', title='Dashboard', icon=':material/analytics:'),
             st.Page(page='visualizacao.py', title='Visualização', icon=':material/dvr:'),
         ],
+        "Visualização": [
+            st.Page(page='visualizacao/descritiva.py', title='Análise Descritiva',
+                    icon=':material/house:'),
+            st.Page(page='visualizacao/diagnostica.py', title='Análise Diagnóstica',
+                    icon=':material/house:'),
+            st.Page(page='visualizacao/preditiva.py', title='Análise Preditiva',
+                    icon=':material/house:'),
+            st.Page(page='visualizacao/prescritiva.py', title='Análise Prescritiva',
+                    icon=':material/house:'),
+            ],
     }
 )
 pg.run()
