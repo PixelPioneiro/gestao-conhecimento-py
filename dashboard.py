@@ -1,5 +1,6 @@
 import streamlit as st
 from pygwalker.api.streamlit import StreamlitRenderer
+import pygwalker as pyg
 
 pyg_app = StreamlitRenderer(
     st.session_state['df'][

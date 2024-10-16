@@ -1,6 +1,7 @@
 import pandas as pd
 import streamlit as st
 import datetime as dt
+
 @st.cache_data
 def load_database():
     df = pd.read_excel('data/ideb.xlsx')

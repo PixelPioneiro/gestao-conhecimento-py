@@ -7,7 +7,7 @@ import plotly.express as px
 cols = st.columns(3)
 colunas = cols[0].multiselect(
     'Dimensões Coluna',
-    st.session_state['dimensao'] + st.session_state['dimensao_tempo']
+    st.session_state['dimensao'] + st.session_state['medida']
 )
 valor = cols[1].selectbox(
     'Medidas',
@@ -92,7 +92,7 @@ if len(colunas) > 2:
             base = st.session_state['df'][
                 (st.session_state['df']['taxa_aprovacao'] == st.session_state['df']['taxa_aprovacao'].max()) &
                 (st.session_state['df']['nota_saeb_matematica'] == st.session_state['df']['nota_saeb_matematica'].max())
-            ].pivot_table(index='nome_regiao', columns=coluna, values=valor, aggfunc='sum').reset_index()
+            ].pivot_table(index='ano', columns=coluna, values=valor, aggfunc='sum').reset_index()
             st.plotly_chart(
                 px.line(
                     base,
